@@ -9,5 +9,14 @@ _If you want to see the magic just type:_
 
 ```
 npm install
+```
+
+```
 npm start
+```
+
+or
+
+```
+npm run dev
 ```
