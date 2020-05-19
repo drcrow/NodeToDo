@@ -6,13 +6,13 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Create Task</h5>
-                        <form action="/add" method="POST">
+                        <h5 class="card-title">Edit Task</h5>
+                        <form action="/update/<%= view_task._id %>" method="POST">
                             <div class="form-group">
-                                <input type="text" name="title" value="" placeholder="Title" class="form-control">
+                                <input type="text" name="title" placeholder="Title" class="form-control" value="<%= view_task.title %>">
                             </div>
                             <div class="form-group">
-                                <textarea name="description" rows="5" placeholder="Description" class="form-control"></textarea>
+                                <textarea name="description" rows="5" placeholder="Description" class="form-control"><%= view_task.description %></textarea>
                             </div>
                             <button class="btn btn-primary btn-block">Save</button>
                         </form>

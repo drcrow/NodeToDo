@@ -1,0 +1,24 @@
+<!-- LIST -->
+<div class="col md-8">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>#</th><th>Task</th><th>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < view_tasks.length; i++){ %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td>
+                        <b><%= view_tasks[i].title %></b><br>
+                        <small><%= view_tasks[i].description %></small>
+                    </td>
+                    <td class="text-center">
+                        <a href="/done/<%= view_tasks[i]._id %>" class="btn <%= view_tasks[i].status ? 'btn-success' : 'btn-dark' %>"><i data-feather="check-circle"></i></a>
+                        <a href="/delete/<%= view_tasks[i]._id %>" class="btn btn-danger"><i data-feather="trash-2"></i></a>
+                        <a href="/edit/<%= view_tasks[i]._id %>" class="btn btn-info"><i data-feather="edit"></i></a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

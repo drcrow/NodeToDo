@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TaskSchema = new Schema({
+const TaskSchema = Schema({
     title: String,
     description: String,
-    stats: {
-        Boolean,
+    status: {
+        type: Boolean,
         default: false
     }
 });
