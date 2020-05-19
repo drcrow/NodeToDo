@@ -43,12 +43,13 @@ router.get('/edit/:id', async (req, res) => {
 
 router.post('/update/:id', async (req, res) => {
     const { id } = req.params;
-    const editedTask = await Task.findById(id);
-    console.log(editedTask);
-    editedTask.title = req.body.title;
-    editedTask.description = req.body.description;
-    console.log(editedTask);
-    await editedTask.save();
+    //const editedTask = await Task.findById(id);
+    //console.log(editedTask);
+    //editedTask.title = req.body.title;
+    //editedTask.description = req.body.description;
+    //console.log(editedTask);
+    //await editedTask.save();
+    await Task.update({_id: id}, req.body);
     res.redirect('/');
 });
 
